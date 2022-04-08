@@ -96,10 +96,15 @@ function Calculator() {
   };
 
   return (
-    <div className="calculator">
-      <Display data={data} />
-      <Keypad getState={getState} />
-    </div>
+    <>
+      <div>
+        <h2>Let&apos;s do some math</h2>
+      </div>
+      <div className="calculator">
+        <Display data={data} />
+        <Keypad getState={getState} />
+      </div>
+    </>
   );
 }
 
