@@ -12,6 +12,7 @@ Array [
   >
     <div
       className="display"
+      data-testid="display"
     >
       <p
         className="display-text"

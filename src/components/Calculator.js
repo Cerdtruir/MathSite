@@ -64,7 +64,7 @@ function Display({ data }) {
   };
 
   return (
-    <div className="display">
+    <div data-testid="display" className="display">
       <p className="display-text">
         {value()}
       </p>
