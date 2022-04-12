@@ -21,34 +21,23 @@ Button.defaultProps = {
 };
 
 function KeypadRight({ getState }) {
+  const buttonsArray = ['÷', 'x', '-', '+', '='];
   return (
     <div className="keypad-right">
-      <Button value="÷" clickFunction={getState} />
-      <Button value="x" clickFunction={getState} />
-      <Button value="-" clickFunction={getState} />
-      <Button value="+" clickFunction={getState} />
-      <Button value="=" clickFunction={getState} />
+      {buttonsArray.map((button) => (
+        <Button key={button} value={button} clickFunction={getState} buttonClass={`button-${button}`} />
+      ))}
     </div>
   );
 }
 
 function KeypadLeft({ getState }) {
+  const buttonsArray = ['AC', '+/-', '%', '7', '8', '9', '4', '5', '6', '1', '2', '3', '0', '.'];
   return (
     <div className="keypad-left">
-      <Button value="AC" clickFunction={getState} />
-      <Button value="+/-" clickFunction={getState} />
-      <Button value="%" clickFunction={getState} />
-      <Button value="7" clickFunction={getState} />
-      <Button value="8" clickFunction={getState} />
-      <Button value="9" clickFunction={getState} />
-      <Button value="4" clickFunction={getState} />
-      <Button value="5" clickFunction={getState} />
-      <Button value="6" clickFunction={getState} />
-      <Button value="1" clickFunction={getState} />
-      <Button value="2" clickFunction={getState} />
-      <Button value="3" clickFunction={getState} />
-      <Button value="0" clickFunction={getState} buttonClass="button-0" />
-      <Button value="." clickFunction={getState} />
+      {buttonsArray.map((button) => (
+        <Button key={button} value={button} clickFunction={getState} buttonClass={`button-${button}`} />
+      ))}
     </div>
   );
 }
@@ -75,7 +64,7 @@ function Display({ data }) {
   };
 
   return (
-    <div className="display">
+    <div data-testid="display" className="display">
       <p className="display-text">
         {value()}
       </p>
