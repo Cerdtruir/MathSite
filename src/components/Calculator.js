@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useState } from 'react';
 import calculate from '../logic/calculate';
 
 function Button({ buttonClass, value, clickFunction }) {
@@ -83,31 +83,24 @@ function Display({ data }) {
   );
 }
 
-class Calculator extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      total: null,
-      next: null,
-      operation: null,
-    };
-    this.getState = this.getState.bind(this);
-    this.setState = this.setState.bind(this);
-  }
+function Calculator() {
+  const [data, setData] = useState({
+    total: null,
+    next: null,
+    operation: null,
+  });
 
-  getState(button) {
-    const data = calculate(this.state, button);
-    this.setState(data);
-  }
+  const getState = (button) => {
+    const newData = calculate(data, button);
+    setData(newData);
+  };
 
-  render() {
-    return (
-      <div className="calculator">
-        <Display data={this.state} />
-        <Keypad getState={this.getState} />
-      </div>
-    );
-  }
+  return (
+    <div className="calculator">
+      <Display data={data} />
+      <Keypad getState={getState} />
+    </div>
+  );
 }
 
 export default Calculator;
