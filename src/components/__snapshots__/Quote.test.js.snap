@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Quote renders correctly 1`] = `
+<div>
+  <h2>
+    John von Neumann:
+    <br />
+    "If people do not believe that mathematics is simple, it is only because they do not realize how complicated life is."
+  </h2>
+</div>
+`;
