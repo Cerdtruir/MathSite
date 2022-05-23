@@ -15,13 +15,13 @@ describe('Navigation', () => {
   test('defaults to home', () => {
     render(<App />);
     fireEvent.click(screen.getByText('Home'));
-    expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent('Welcome to our page!');
+    expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent('Welcome to my calculator app');
   });
 
   test('navigation home', () => {
     render(<App />);
     fireEvent.click(screen.getByText('Home'));
-    expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent('Welcome to our page!');
+    expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent('Welcome to my calculator app');
   });
 
   test('navigation calculator', () => {
@@ -33,7 +33,7 @@ describe('Navigation', () => {
   test('navigation quote', () => {
     render(<App />);
     fireEvent.click(screen.getByText('Quote'));
-    expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent('Quote About maths placeholder');
+    expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent('John von Neumann');
   });
 });
 
